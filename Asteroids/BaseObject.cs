@@ -15,10 +15,9 @@ namespace Asteroids
             Size = size;
         }
 
-        
-        public bool Collision(ICollision obj) => obj.Rect.IntersectsWith(this.Rect);
+        public Rectangle Rect => new Rectangle(Pos, Size);
 
-        public Rectangle Rect => new Rectangle(Pos, Size);       
+        public bool Collision(ICollision obj) => obj.Rect.IntersectsWith(Rect);
 
         public abstract void Draw();      
 
